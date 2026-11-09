@@ -2,6 +2,7 @@ export const chargeSeconds = 1.32;
 export const sweetStart = 0.69;
 export const sweetEnd = 0.82;
 export const roofHeight = 1;
+export const faceHeight = -0.42;
 export const catchHeight = 0.018;
 export const catchEarly = 0.125;
 export const catchLate = 0.105;
@@ -26,7 +27,7 @@ export function makeFlight(power) {
     apex,
     roofAt: peak >= roofHeight ? timeAt(roofHeight, -1) : Infinity,
     catchAt: timeAt(catchHeight, 1),
-    faceAt: timeAt(-0.42, 1),
+    faceAt: timeAt(faceHeight, 1),
     heightAt: (seconds) => velocity * seconds - gravity * seconds ** 2 / 2,
   };
 }

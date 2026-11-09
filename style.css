@@ -81,3 +81,14 @@ kbd { border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; color
   h1 { font-size: clamp(2.4rem, 14vh, 4rem); }
   h2 { font-size: clamp(2rem, 10vh, 3.2rem); }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .arena[data-impact="face"] .room { animation: camera-kick .22s ease-out; }
+  .arena[data-impact="face"] .result { animation: reveal-result .16s .17s both; }
+  @keyframes camera-kick {
+    0%, 100% { transform: none; }
+    26% { transform: translate(3px, 5px) scale(1.025); }
+    55% { transform: translate(-2px, -2px) scale(1.015); }
+  }
+  @keyframes reveal-result { from { opacity: 0; } to { opacity: 1; } }
+}

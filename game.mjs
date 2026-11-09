@@ -92,6 +92,7 @@ function begin(input, now) {
   if (phase === 'over') {
     if (now < retryAt) return;
     result.hidden = true;
+    delete arena.dataset.impact;
     score = 0;
     combo = 0;
     effect = null;
@@ -121,6 +122,7 @@ function lose(type, now) {
   const roof = type === 'roof';
   effect = { type, at: now };
   retryAt = now + .34;
+  arena.dataset.impact = type;
   setPhase('over');
   feedback.textContent = '';
   byId('reason').textContent = roof ? 'Ceiling bonk!' : 'Oof. Right in the face.';

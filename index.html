@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#100b16">
+  <meta name="description" content="A one-button bedroom arcade game. Toss a tennis ball, clear the ceiling, and catch it clean.">
+  <title>BallToss | Lang Systems Arcade</title>
+  <link rel="icon" href="art/ball.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cabinet">
+    <header class="bar">
+      <a class="arcade" href="https://arcade.langsystems.com.au/"><span aria-hidden="true">←</span><span>LANG SYSTEMS <b>ARCADE</b></span></a>
+      <div class="scores" aria-label="Scores">
+        <div><span id="score">00</span><small>CATCHES</small></div>
+        <div><span id="best">00</span><small>BEST</small></div>
+      </div>
+      <button id="sound" type="button" aria-label="Mute sound" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="waves" d="M16 9a4 4 0 0 1 0 6m2-8a7 7 0 0 1 0 10"/><path class="slash" d="m16 10 4 4m0-4-4 4"/>
+        </svg>
+      </button>
+    </header>
+
+    <section id="arena" class="arena" data-phase="ready" aria-label="BallToss">
+      <div class="room" aria-hidden="true"></div>
+      <canvas id="scene" aria-hidden="true"></canvas>
+      <button id="control" class="play-surface" type="button" aria-label="Toss or catch the ball" aria-describedby="controls"></button>
+      <div class="intro" id="intro">
+        <span class="edition"><i></i> THE BEDROOM SESSIONS <i></i></span>
+        <h1>Ball<span>Toss</span></h1>
+        <p>How many can you catch?</p>
+      </div>
+      <div id="result" class="result" hidden>
+        <span class="edition">RUN OVER</span>
+        <h2 id="reason"></h2>
+        <p id="tip"></p>
+      </div>
+      <div id="feedback" class="feedback" aria-hidden="true"></div>
+      <div class="action">
+        <div id="meter" class="meter" aria-hidden="true"><div id="fill"></div><div class="sweet"></div></div>
+        <p id="cue">Hold to charge</p>
+      </div>
+    </section>
+
+    <footer id="controls" class="controls">
+      <span><b>HOLD</b> to charge</span><i></i><span><b>RELEASE</b> to toss</span><i></i><span><b>TAP</b> to catch</span>
+      <span class="keyboard"><kbd>SPACE</kbd> on keyboard</span>
+    </footer>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+  <script type="module" src="game.mjs"></script>
+</body>
+</html>

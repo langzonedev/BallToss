@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><radialGradient id="felt" cx="32%" cy="25%" r="75%"><stop stop-color="#f4fcab"/><stop offset=".65" stop-color="#cee56c"/><stop offset="1" stop-color="#657039"/></radialGradient></defs>
+  <circle cx="32" cy="32" r="30" fill="url(#felt)"/>
+  <path d="M13 9q26 15 4 40m34-37q-23 12-7 47" fill="none" stroke="#ffffe1" stroke-width="2.8"/>
+</svg>

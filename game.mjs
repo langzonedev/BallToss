@@ -2,7 +2,7 @@ import {
   catchEarly, catchLate, gradeCatch, isSweet, makeFlight, powerAt, sweetStart, sweetEnd,
 } from './physics.mjs';
 import { createScene } from './scene.mjs';
-import { createSound } from './sound.mjs';
+import { createSound } from './sound.mjs?v=2';
 
 const byId = (id) => document.getElementById(id);
 const arena = byId('arena');
